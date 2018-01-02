@@ -1,12 +1,12 @@
-# My Env on Ubuntu
-Configs and Softwares installation for Ubuntu Linux Enviroment.
+# My Env on Ubuntu CLI
+Softwares installation and Configs for Ubuntu Linux Enviroment.
 
 # Description
-**My Env on Ubuntu** is a _Command Line Interface_ that make easier to set up some configurations and installations on Ubuntu Linux Enviroment. 
-It is very helpful after an operating system reinstall (or not :)
+- **My Env on Ubuntu** is a _Command Line Tool_ that makes easier to set up and to  install some softwares on Ubuntu Linux Enviroment via CLI. 
+- It is very helpful after an operating system reinstall (or not :)
 
 # Instructions
-Inform a **BLOCK** of commands to run.
-Optionally, you can inform an **OPTION** and a **TAG**.
-Example:
-```./dev sublime --install --log```
+- Inform which **BLOCK** of commands must be executed.
+- Optionally, you can inform an **OPTION** and a **TAG**.
+- Example:
+	- ```./dev sublime --install --log```
