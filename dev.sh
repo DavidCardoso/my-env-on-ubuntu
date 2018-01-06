@@ -25,8 +25,21 @@ main(){
 	echo "  Running $_script script..."
 	echo
 
+	# case BLOCK
 	case $_block in
 		sublime)
+			# case OPTION
+			case $_option in
+				--install)
+					install_$_block
+					;;
+				*)
+					confirm_install
+					;;
+			esac
+			;;
+		docker)
+			# case OPTION
 			case $_option in
 				--install)
 					install_$_block
@@ -37,6 +50,7 @@ main(){
 			esac
 			;;
 		*)
+			# default case
 			show_help
 			exit  0
 			;;
@@ -82,6 +96,22 @@ install_sublime(){
 	
 	echo
 	echo "...End of Sublime Text Installation."
+	show_line
+}
+
+# function install_docker()
+install_docker(){
+	show_line
+	if [[ -e /usr/bin/docker ]]; then
+		echo "Docker is already installed!"
+		exit 0
+	fi
+
+	echo "Installing Docker CE..."
+	echo "Based on: https://"
+
+	echo
+	echo "...End of Docker CE Installation."
 	show_line
 }
 
