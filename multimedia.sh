@@ -68,6 +68,15 @@ confirm_install(){
 	fi
 }
 
+# function confirm_continue()
+confirm_continue(){
+	echo "Continue? (Y/n)"
+   	read choice;
+   	if [[ $choice != "Y" || $choice != "y" || $choice != "yes" ]];  then
+		exit 0
+	fi
+}
+
 # function install_docker()
 install_vlc(){
 	show_line
