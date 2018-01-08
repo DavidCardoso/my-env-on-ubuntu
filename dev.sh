@@ -129,12 +129,12 @@ install_docker(){
 # function install_docker()
 install_android-studio(){
 	show_line
-	if [[ -e /usr/bin/android-studio ]]; then
+	if [[ -e /opt/android-studio/bin/studio.sh ]]; then
 		echo "Android Studio is already installed!"
 		exit 0
 	fi
 
-	echo "Installing Andorid Studio..."
+	echo "Installing Android Studio..."
 	echo "Based on: http://www.edivaldobrito.com.br/instalar-android-studio-no-ubuntu/"
 
 	sudo add-apt-repository ppa:maarten-fonville/android-studio
