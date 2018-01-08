@@ -9,10 +9,10 @@
 ## @sa		https://github.com/KalahariDavid/my-env-on-ubuntu/blob/master/dev.sh
 
 # COMMAND LINE ARGUMENTS
-_script=$0
-_block=$1
-_option=$2
-_tag=$3
+_script=$0 # name of this script
+_block=$1 # block of commands to run
+_option=$2 # option related to the block
+_tag=$3 # tag to modify some behavior of the execution
 
 # function main()
 main(){
@@ -22,46 +22,27 @@ main(){
 	echo "#  Powered by David Cardoso.    #"
 	show_sharp_line
 	echo
+	echo "See more: https://github.com/KalahariDavid/my-env-on-ubuntu"
+	echo
 	echo "  Running $_script script..."
 	echo
 
-	# case BLOCK
+	# which BLOCK must be runned
 	case $_block in
+		# Sublime Text (IDE)
 		sublime)
-			# case OPTION
-			case $_option in
-				--install)
-					install_$_block
-					;;
-				*)
-					confirm_install
-					;;
-			esac
+			case_option
 			;;
+		# Docker CE (apps via containers)
 		docker)
-			# case OPTION
-			case $_option in
-				--install)
-					install_$_block
-					;;
-				*)
-					confirm_install
-					;;
-			esac
+			case_option
 			;;
+		# Android Studio (IDE)
 		android-studio)
-			# case OPTION
-			case $_option in
-				--install)
-					install_$_block
-					;;
-				*)
-					confirm_install
-					;;
-			esac
+			case_option
 			;;
+		# default case
 		*)
-			# default case
 			show_help
 			exit  0
 			;;
@@ -72,7 +53,7 @@ main(){
 show_help(){
 	show_line
 	echo "Please, inform a BLOCK of commands to run."
-	echo "Optionally, you can inform an OPTION and a TAG."
+	echo "Optionally, you may inform an OPTION and a TAG."
 	echo
 	echo "Example: "
 	echo "$_script sublime --install --log"
@@ -99,6 +80,18 @@ confirm_continue(){
 	fi
 }
 
+# function case_option()
+case_option(){
+	case $_option in
+		--install)
+			install_$_block
+			;;
+		*)
+			confirm_install
+			;;
+	esac
+}
+
 # function install_sublime()
 install_sublime(){
 	show_line
@@ -117,7 +110,7 @@ install_sublime(){
 	sudo apt update && sudo apt install sublime-text
 	
 	echo
-	echo "...End of Sublime Text Installation."
+	echo "...End of Sublime Text installation."
 	show_line
 }
 
@@ -162,7 +155,8 @@ install_docker(){
    	sudo docker run hello-world
 	
 	echo
-	echo "...End of Docker CE Installation."
+	echo "...End of Docker CE installation."
+	show_line
 }
 
 # function install_docker()
@@ -183,7 +177,40 @@ install_android-studio(){
 	sudo apt install android-studio
 
 	echo
-	echo "...End of Android Studio Installation."
+	echo "...End of Android Studio installation."
+	show_line
+}
+
+# function install_composer()
+install_composer(){
+	show_line
+	if [[ -e /usr/local/bin/composer ]];  then
+		echo "Composer is already installed!"
+		exit 0
+	fi
+
+	show_line
+	echo "Installing Composer..."
+	echo "Based on: https://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md"
+	echo
+
+	cd
+	EXPECTED_SIGNATURE=$(wget -q -O - https://composer.github.io/installer.sig)
+	php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+	ACTUAL_SIGNATURE=$(php -r "echo hash_file('SHA384', 'composer-setup.php');")
+
+	if [ "$EXPECTED_SIGNATURE" != "$ACTUAL_SIGNATURE" ]
+	then
+	    >&2 echo 'ERROR: Invalid installer signature'
+	    rm composer-setup.php
+	    exit 1
+	fi
+
+	php composer-setup.php --quiet --install-dir=/usr/local/bin --filename=composer
+	rm composer-setup.php
+	
+	echo
+	echo "...End of Composer installation."
 	show_line
 }
 
