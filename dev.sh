@@ -49,6 +49,17 @@ main(){
 					;;
 			esac
 			;;
+		android-studio)
+			# case OPTION
+			case $_option in
+				--install)
+					install_$_block
+					;;
+				*)
+					confirm_install
+					;;
+			esac
+			;;
 		*)
 			# default case
 			show_help
@@ -112,6 +123,26 @@ install_docker(){
 
 	echo
 	echo "...End of Docker CE Installation."
+	show_line
+}
+
+# function install_docker()
+install_android-studio(){
+	show_line
+	if [[ -e /usr/bin/android-studio ]]; then
+		echo "Android Studio is already installed!"
+		exit 0
+	fi
+
+	echo "Installing Andorid Studio..."
+	echo "Based on: http://www.edivaldobrito.com.br/instalar-android-studio-no-ubuntu/"
+
+	sudo add-apt-repository ppa:maarten-fonville/android-studio
+	sudo apt update
+	sudo apt install android-studio
+
+	echo
+	echo "...End of Android Studio Installation."
 	show_line
 }
 
