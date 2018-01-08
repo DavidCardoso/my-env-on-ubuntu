@@ -41,6 +41,10 @@ main(){
 		android-studio)
 			case_option
 			;;
+		# Composer (PHP package manager)
+		composer)
+			case_option
+			;;
 		# default case
 		*)
 			show_help
