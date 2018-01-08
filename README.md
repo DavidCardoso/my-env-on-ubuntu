@@ -7,6 +7,6 @@ Softwares installation and Configs for Ubuntu Linux Enviroment.
 
 # Instructions
 - Inform which **BLOCK** of commands must be executed.
-- Optionally, you can inform an **OPTION** and a **TAG**.
+- Optionally, you may inform an **OPTION** and a **TAG**.
 - Example:
 	- ```./dev sublime --install --log```

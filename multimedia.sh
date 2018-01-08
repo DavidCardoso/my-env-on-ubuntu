@@ -6,7 +6,7 @@
 ## @author 	David Cardoso
 ## @since	January 7th, 2018
 ## @license	GNU GPL-3.0
-## @sa		https://github.com/KalahariDavid/my-env-on-ubuntu/multimedia.sh
+## @sa		https://github.com/KalahariDavid/my-env-on-ubuntu/blob/master/multimedia.sh
 
 # COMMAND LINE ARGUMENTS
 _script=$0
