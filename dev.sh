@@ -173,6 +173,7 @@ install_android-studio(){
 		exit 0
 	fi
 
+	show_line
 	echo "Installing Android Studio..."
 	echo "Based on: http://www.edivaldobrito.com.br/instalar-android-studio-no-ubuntu/"
 	echo
