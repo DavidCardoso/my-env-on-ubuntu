@@ -40,9 +40,13 @@ main(){
 		docker)
 			case_option
 			;;
+		# Docker Compose (CLI for Docker)
+		docker-compose)
+			case_option
+			;;
 		# Android Studio (IDE)
 		android-studio)
-			case_option
+			case_option2
 			;;
 		# Composer (PHP package manager)
 		composer)
@@ -51,7 +55,7 @@ main(){
 		# VLC (media player with codecs)
 		vlc)
 			case_option
-			;;
+			;;		
 		# default case
 		*)
 			show_help
@@ -60,11 +64,16 @@ main(){
 	esac
 }
 
-# function show_help()
-show_help(){
-	show_line
-	cat $MEOUPATH/txt/help.txt
-	echo
+# function case_option()
+case_option(){
+	case $_option in
+		--install)
+			install_$_block
+			;;
+		*)
+			confirm_install
+			;;
+	esac
 }
 
 # function confirm_install()
@@ -87,16 +96,11 @@ confirm_continue(){
 	fi
 }
 
-# function case_option()
-case_option(){
-	case $_option in
-		--install)
-			install_$_block
-			;;
-		*)
-			confirm_install
-			;;
-	esac
+# function show_help()
+show_help(){
+	show_line
+	cat $MEOUPATH/txt/help.txt
+	echo
 }
 
 # function show_sharp_line()
