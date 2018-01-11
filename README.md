@@ -14,4 +14,4 @@ Softwares installation and Configs for Ubuntu Linux Enviroment.
 - Inform which **BLOCK** of commands must be executed.
 - Optionally, you may inform an **OPTION** and a **TAG**.
 - Example:
-	- ```./dev sublime --install --log```
+	- ```meou sublime --install --log```
