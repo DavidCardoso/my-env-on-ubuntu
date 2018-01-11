@@ -18,3 +18,4 @@ Available block of commands:
 	docker 		Docker Community Edition (apps via containers)
 	android-studio 	Android Studio IDE
 	composer 	PHP package manager
+	vlc 		Media Player with some standards codecs 
