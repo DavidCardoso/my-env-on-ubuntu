@@ -1,83 +1,14 @@
 #!/bin/bash
 
-## @file	multimedia.sh
-## @brief	Configs and softwares for Ubuntu Multimedia enviroment
-## @details	Recommended after an operating system reinstall (or not :)
-## @author 	David Cardoso
-## @since	January 7th, 2018
-## @license	GNU GPL-3.0
-## @sa		https://github.com/KalahariDavid/my-env-on-ubuntu/blob/master/multimedia.sh
+## @file multimedia.sh
+## @brief      Functions with block with commands.
+## @details    Configs and softwares for Ubuntu Linux Multimedia enviroment
+## @author     David Cardoso
+## @since      January 7th, 2018
+## @copyright  GNU GPL-3.0
+## @sa         https://github.com/KalahariDavid/my-env-on-ubuntu/
 
-# COMMAND LINE ARGUMENTS
-_script=$0
-_block=$1
-_option=$2
-_tag=$3
-
-# function main()
-main(){
-	clear
-	show_sharp_line
-	echo "#  Welcome to My Env on Ubuntu! #"
-	echo "#  Powered by David Cardoso.    #"
-	show_sharp_line
-	echo
-	echo "  Running $_script script..."
-	echo
-
-	# case BLOCK
-	case $_block in
-		vlc)
-			# case OPTION
-			case $_option in
-				--install)
-					install_$_block
-					;;
-				*)
-					confirm_install
-					;;
-			esac
-			;;
-		*)
-			# default case
-			show_help
-			exit  0
-			;;
-	esac
-}
-
-# function show_help()
-show_help(){
-	show_line
-	echo "Please, inform a BLOCK of commands to run."
-	echo "Optionally, you can inform an OPTION and a TAG."
-	echo
-	echo "Example: "
-	echo "$_script vlc --install --log"
-	echo
-}
-
-# function confirm_install()
-confirm_install(){
-	echo "Do you want to install $_block? (Y/n)"
-	read choice
-	if [[ $choice == "Y" || $choice == "y" || $choice == "yes" ]];  then
-		install_$_block
-	else
-		echo "...Exiting!"	
-	fi
-}
-
-# function confirm_continue()
-confirm_continue(){
-	echo "Continue? (Y/n)"
-   	read choice;
-   	if [[ $choice != "Y" || $choice != "y" || $choice != "yes" ]];  then
-		exit 0
-	fi
-}
-
-# function install_docker()
+# function install_vlc()
 install_vlc(){
 	show_line
 	if [[ -e /usr/bin/vlc ]]; then
@@ -98,16 +29,3 @@ install_vlc(){
 	echo "...End of VLC Installation."
 	show_line
 }
-
-# function show_sharp_line()
-show_sharp_line(){
-	echo "#################################"
-}
-
-# function show_line()
-show_line(){
-	echo "---------------------------------"
-}
-
-# calling main() function
-main

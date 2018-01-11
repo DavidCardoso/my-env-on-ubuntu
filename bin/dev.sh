@@ -1,100 +1,12 @@
 #!/bin/bash
 
-## @file	dev.sh
-## @brief	Configs and softwares for Ubuntu development enviroment
-## @details	Recommended after an operating system reinstall (or not :)
-## @author 	David Cardoso
-## @since	January 1st, 2018
-## @license	GNU GPL-3.0
-## @sa		https://github.com/KalahariDavid/my-env-on-ubuntu/blob/master/dev.sh
-
-# COMMAND LINE ARGUMENTS
-_script=$0 # name of this script
-_block=$1 # block of commands to run
-_option=$2 # option related to the block
-_tag=$3 # tag to modify some behavior of the execution
-
-# function main()
-main(){
-	clear
-	show_sharp_line
-	echo "#  Welcome to My Env on Ubuntu! #"
-	echo "#  Powered by David Cardoso.    #"
-	show_sharp_line
-	echo
-	echo "See more: https://github.com/KalahariDavid/my-env-on-ubuntu"
-	echo
-	echo "  Running $_script script..."
-	echo
-
-	# which BLOCK must be runned
-	case $_block in
-		# Sublime Text (IDE)
-		sublime)
-			case_option
-			;;
-		# Docker CE (apps via containers)
-		docker)
-			case_option
-			;;
-		# Android Studio (IDE)
-		android-studio)
-			case_option
-			;;
-		# Composer (PHP package manager)
-		composer)
-			case_option
-			;;
-		# default case
-		*)
-			show_help
-			exit  0
-			;;
-	esac
-}
-
-# function show_help()
-show_help(){
-	show_line
-	echo "Please, inform a BLOCK of commands to run."
-	echo "Optionally, you may inform an OPTION and a TAG."
-	echo
-	echo "Example: "
-	echo "$_script sublime --install --log"
-	echo
-}
-
-# function confirm_install()
-confirm_install(){
-	echo "Do you want to install $_block? (Y/n)"
-	read choice
-	if [[ $choice == "Y" || $choice == "y" || $choice == "yes" ]];  then
-		install_$_block
-	else
-		echo "...Not installed!"	
-	fi
-}
-
-# function confirm_continue()
-confirm_continue(){
-	echo "Continue? (Y/n)"
-   	read choice;
-   	if [[ $choice != "Y" || $choice != "y" || $choice != "yes" ]];  then
-		exit 0
-	fi
-}
-
-# function case_option()
-case_option(){
-	case $_option in
-		--install)
-			install_$_block
-			;;
-		*)
-			confirm_install
-			;;
-	esac
-}
+## @file dev.sh
+## @brief      Functions with block with commands.
+## @details    Configs and softwares for Ubuntu Linux Development enviroment
+## @author     David Cardoso
+## @since      January 1st, 2018
+## @copyright  GNU GPL-3.0
+## @sa         https://github.com/KalahariDavid/my-env-on-ubuntu/
 
 # function install_sublime()
 install_sublime(){
@@ -163,7 +75,7 @@ install_docker(){
 	show_line
 }
 
-# function install_docker()
+# function install_android-studio()
 install_android-studio(){
 	show_line
 	if [[ -e /opt/android-studio/bin/studio.sh ]]; then
@@ -217,16 +129,3 @@ install_composer(){
 	echo "...End of Composer installation."
 	show_line
 }
-
-# function show_sharp_line()
-show_sharp_line(){
-	echo "#################################"
-}
-
-# function show_line()
-show_line(){
-	echo "---------------------------------"
-}
-
-# calling main() function
-main
