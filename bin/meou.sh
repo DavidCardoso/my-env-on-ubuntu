@@ -8,109 +8,76 @@
 ## @sa         https://github.com/KalahariDavid/my-env-on-ubuntu/
 
 # COMMAND LINE ARGUMENTS
+_argc=$# # count of arguments
 _script=$0 # name of this script
 _block=$1 # block of commands to run
 _option=$2 # option related to the block
 _tag=$3 # tag to modify some behavior of the execution
 
 # importing functions
+. $MEOUPATH/bin/helpers.sh
 . $MEOUPATH/bin/dev.sh
 . $MEOUPATH/bin/multimedia.sh
 
 # function main()
 main(){
-	clear
-	show_sharp_line
-	echo "#  Welcome to My Env on Ubuntu! #"
-	echo "#  Powered by David Cardoso.    #"
-	show_sharp_line
-	echo
-	echo "See also: https://github.com/KalahariDavid/my-env-on-ubuntu"
-	echo
-	echo "  Running $MEOUPATH/bin/meou.sh script..."
-	echo
+	# header
+	show_header "$MEOUPATH/bin/meou.sh"
 
 	# which BLOCK must be runned
 	case $_block in
 		# Sublime Text (IDE)
 		sublime)
-			case_option
+			case_option 'software' $_option
 			;;
 		# Docker CE (container manager)
 		docker)
-			case_option
+			case_option 'software' $_option
 			;;
 		# Docker Compose (CLI for Docker)
 		docker-compose)
-			case_option
+			case_option 'software' $_option
 			;;
 		# Android Studio (IDE)
 		android-studio)
-			case_option2
+			case_option 'software' $_option
 			;;
 		# Composer (PHP package manager)
 		composer)
-			case_option
+			case_option 'software' $_option
 			;;
 		# VLC (media player with codecs)
 		vlc)
-			case_option
+			case_option 'software' $_option
 			;;		
 		# default case
 		*)
-			show_help
-			exit  0
+			case $_argc in
+				0)
+					case_option 'default' '--help'
+					;;
+				1)
+					case_option 'default' $_block
+					;;
+				2)
+					case_option 'default' $_option
+					;;
+				3)
+					case_option 'default' $_option
+					;;
+				*)
+					echo 'Please, inform until three arguments:'
+					echo '0: meou'
+					echo '1: meou [BLOCK]'
+					echo '2: meou [BLOCK] [OPTION]'
+					echo '3: meou [BLOCK] [OPTION] [TAG]'
+					;;
+			esac
+			echo
+			echo '...Exiting!'
+			exit 0
 			;;
 	esac
-}
-
-# function case_option()
-case_option(){
-	case $_option in
-		--install)
-			install_$_block
-			;;
-		*)
-			confirm_install
-			;;
-	esac
-}
-
-# function confirm_install()
-confirm_install(){
-	echo "Do you want to install $_block? (Y/n)"
-	read choice
-	if [[ $choice == "Y" || $choice == "y" || $choice == "yes" ]];  then
-		install_$_block
-	else
-		echo "...Not installed!"	
-	fi
-}
-
-# function confirm_continue()
-confirm_continue(){
-	echo "Continue? (Y/n)"
-   	read choice;
-   	if [[ $choice != "Y" || $choice != "y" || $choice != "yes" ]];  then
-		exit 0
-	fi
-}
-
-# function show_help()
-show_help(){
-	show_line
-	cat $MEOUPATH/txt/help.txt
-	echo
-}
-
-# function show_sharp_line()
-show_sharp_line(){
-	echo "#################################"
-}
-
-# function show_line()
-show_line(){
-	echo "---------------------------------"
 }
 
 # calling main() function
