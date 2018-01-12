@@ -34,9 +34,9 @@ to install some softwares on Ubuntu Linux Enviroment via CLI.
 	- --install 	Install the software related to the [BLOCK] chosen 
 
 - Available Block of commands:
-	- sublime 	Sublime Text IDE
-	- docker 		Docker Community Edition (apps via containers)
-	- docker-compose 	Docker Compose (CLI for Docker) 
-	- android-studio 	Android Studio IDE
-	- composer 	PHP package manager
-	- vlc 		Media Player with some standards codecs 
+	- sublime: Sublime Text IDE
+	- docker: Docker Community Edition (apps via containers)
+	- docker-compose: Docker Compose (CLI for Docker) 
+	- android-studio: Android Studio IDE
+	- composer: PHP package manager
+	- vlc: Media Player with some standards codecs 
