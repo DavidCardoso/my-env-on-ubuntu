@@ -67,7 +67,7 @@ show_version(){
 	show_line
 	cd $MEOUPATH && git fetch -vp 2&> /dev/null
 	echo "Version: "
-	git tag | egrep v.
+	git tag | egrep v. | tail -1
 	cd - 2&> /dev/null
 	echo
 	show_mascot
