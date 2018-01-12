@@ -64,13 +64,14 @@ show_help(){
 
 # function show_version()
 show_version(){
+	show_mascot
+	echo
 	show_line
 	cd $MEOUPATH && git fetch -vp 2&> /dev/null
 	echo "Version: "
 	git tag | egrep v. | tail -1
 	cd - 2&> /dev/null
 	echo
-	show_mascot
 }
 
 # function show_mascot()
