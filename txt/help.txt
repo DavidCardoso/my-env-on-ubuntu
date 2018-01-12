@@ -1,5 +1,10 @@
 Usage:
+	meou [BLOCK]
+	meou [BLOCK] [OPTION]
 	meou [BLOCK] [OPTION] [TAG]
+
+Example:
+	meou sublime --install
 
 Install, configure, refresh and remove things on your Ubuntu Linux enviroment.
 
