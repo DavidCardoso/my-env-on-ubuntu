@@ -11,6 +11,9 @@
 _script=$0 # name of this script
 _arg1=$1 # first argument
 
+# variables
+_prefix="[MEOU]"
+
 # importing functions
 . ./bin/helpers.sh
 
@@ -19,24 +22,27 @@ show_header "install.sh"
 
 # setting up the symbolic link to bin path
 show_line
-echo "Creating symbolic link 'meou' on /usr/local/bin/ path..."
+echo "$_prefix Creating symbolic link 'meou' on /usr/local/bin/ path..."
 sudo rm /usr/local/bin/meou
 sudo ln -s $(pwd)/bin/meou.sh /usr/local/bin/meou
 
 # adding execution permission to the scripts in bin path
 show_line
-echo "Adding execution permission to the scripts in $PWD/bin path..."
+echo "$_prefix Adding execution permission to the scripts in $PWD/bin path..."
 chmod +x ./bin/*.sh
 
 # setting up the user profile configs (to be persistent between users logins sessions)
 show_line
-echo "Setting up the user profile configs (to be persistent between users logins sessions)..."
-_bash="#!/bin/bash"
-echo "$_bash
+_msg="$_prefix Setting up the user profile configs (to be persistent between users logins sessions)..."
+echo $_msg
+echo "
+# $_msg
 if [[ \$USER == $USER ]]; then
 	export MEOUPATH=$PWD
-fi" > ./txt/configs.txt
-sudo cp ./txt/configs.txt /etc/profile.d/my-env-on-ubuntu-configs-$USER.sh
+fi" >> ./txt/configs.txt
+for _profiles in ~/.*rc; do
+	cat ./txt/configs.txt >> $_profiles
+done
 export MEOUPATH=$PWD
 rm -f ./txt/configs.txt
 
@@ -48,3 +54,8 @@ show_mascot
 echo
 echo "Run 'meou --help' for more information!"
 echo
+echo "* If you face some troubles try restarting your user session (logout/login)."
+echo "* If still does not work properly try rebooting your system."
+echo
+
+# TODO: handle multiple 'source install.sh' executions

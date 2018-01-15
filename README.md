@@ -9,7 +9,7 @@ Softwares installation and Configs for Ubuntu Linux Enviroment.
 - Navigate to the desired folder
 - $ git clone https://github.com/KalahariDavid/my-env-on-ubuntu
 - $ cd my-env-on-ubuntu
-- $ ./install.sh
+- $ source install.sh
 
 # Instructions of usage
 - Usage:
