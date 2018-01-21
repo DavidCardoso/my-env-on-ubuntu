@@ -104,3 +104,9 @@ show_header(){
 	echo "  Running $1 script..."
 	echo
 }
+
+# function first_letter_lower
+first_letter_lower(){
+	result=$(echo $1 | tr '[:upper:]' '[:lower:]' | cut -b1)
+	return result
+}
