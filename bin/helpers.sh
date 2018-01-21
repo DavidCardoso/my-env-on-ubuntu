@@ -7,9 +7,6 @@
 ## @copyright  GNU GPL-3.0
 ## @sa         https://github.com/KalahariDavid/my-env-on-ubuntu/
 
-. $MEOUPATH/bin/dev.sh
-. $MEOUPATH/bin/multimedia.sh
-
 # function case_option()
 case_option(){
 	case $2 in
