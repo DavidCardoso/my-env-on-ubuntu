@@ -169,7 +169,8 @@ install_ohmyzsh(){
 	if [[ -n /usr/bin/zsh ]]; then
 		echo "Zsh is required. Do you want install it? (Y/n)"
 		read choice;
-		if [[ $choice == "Y" || $choice == "y" || $choice == "yes"]]; then
+		choice=$(first_letter_lower $choice)
+		if [[ $choice == "y" ]]; then
 			sudo apt update && apt install zsh
 			sudo chsh -s $(which zsh)
 			zsh --version
