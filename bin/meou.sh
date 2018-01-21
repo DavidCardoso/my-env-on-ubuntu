@@ -49,7 +49,11 @@ main(){
 		# VLC (media player with codecs)
 		vlc)
 			case_option 'software' $_option
-			;;		
+			;;
+		# Oh My Zsh (Framework Zsh)
+		oh-my-zsh)
+			case_option 'software' $_option
+			;;
 		# default case
 		*)
 			case $_argc in

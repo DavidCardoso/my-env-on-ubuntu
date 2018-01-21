@@ -151,3 +151,57 @@ install_composer(){
 	echo "...End of Composer installation."
 	show_line
 }
+
+# function install_oh-my-zsh()
+install_oh-my-zsh(){
+	show_line
+	if [[ -e /usr/bin/zsh && -e ~/.oh-my-zsh/oh-my-zsh.sh ]]; then
+		echo "Oh-My-Zsh is already installed!"
+		exit 0
+	fi
+
+	show_line
+	echo "Installing Oh-My-Zsh..."
+	echo "Based on: https://github.com/robbyrussell/oh-my-zsh/blob/master/README.md"
+	echo
+
+	if [[ -n /usr/bin/zsh ]]; then
+		echo "Zsh is required. Do you want install it? (Y/n)"
+		read choice;
+		if [[ $choice == "Y" || $choice == "y" || $choice == "yes"]]; then
+			sudo apt update && apt install zsh
+			sudo chsh -s $(which zsh)
+			zsh --version
+		fi
+	else
+		exit 0;
+	fi
+
+	if [[ -e /usr/bin/curl ]]; then
+		cd
+		sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+		cd -
+	else 
+		if [[ -e /usr/bin/wget ]]; then
+			cd
+			sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+			cd -
+		else
+			echo "curl or wget is required. Do you want install them? (Y/n)"
+			read choice;
+			choice=$(first_letter_lower $choice)
+			if [[ $choice == "y" ]]; then
+				sudo apt update && apt install wget curl
+				meou $_block $_option $_tag
+			fi
+		fi
+	fi
+
+	echo
+	show_line
+	echo "See more: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins"
+
+	echo
+	echo "...End of Oh-My-Zsh installation."
+	show_line
+}
