@@ -10,6 +10,8 @@
 # COMMAND LINE ARGUMENTS
 _script=$0 # name of this script
 _arg1=$1 # first argument
+_pwd=$(pwd)
+_user=$(whoami)
 
 # variables
 _prefix="[MEOU]"
@@ -23,12 +25,17 @@ show_header "install.sh"
 # setting up the symbolic link to bin path
 show_line
 echo "$_prefix Creating symbolic link 'meou' on /usr/local/bin/ path..."
-sudo rm /usr/local/bin/meou
-sudo ln -s $(pwd)/bin/meou.sh /usr/local/bin/meou
+if [[ $_user != "root" ]]; then
+	sudo rm /usr/local/bin/meou
+	sudo ln -s $_pwd/bin/meou.sh /usr/local/bin/meou
+else
+	rm /usr/local/bin/meou
+	ln -s $_pwd/bin/meou.sh /usr/local/bin/meou
+fi
 
 # adding execution permission to the scripts in bin path
 show_line
-echo "$_prefix Adding execution permission to the scripts in $PWD/bin path..."
+echo "$_prefix Adding execution permission to the scripts in $_pwd/bin path..."
 chmod +x ./bin/*.sh
 
 # setting up the user profile configs (to be persistent between users logins sessions)
@@ -37,13 +44,13 @@ _msg="$_prefix Setting up the user profile configs (to be persistent between use
 echo $_msg
 echo "
 # $_msg
-if [[ \$USER == $USER ]]; then
-	export MEOUPATH=$PWD
+if [[ \$(whoami) == $_user ]]; then
+	export MEOUPATH=$_pwd
 fi" >> ./txt/configs.txt
 for _profiles in ~/.*rc; do
 	cat ./txt/configs.txt >> $_profiles
 done
-export MEOUPATH=$PWD
+export MEOUPATH=$_pwd
 rm -f ./txt/configs.txt
 
 # End of installation
