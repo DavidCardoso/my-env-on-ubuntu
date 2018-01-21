@@ -16,8 +16,6 @@ _tag=$3 # tag to modify some behavior of the execution
 
 # importing functions
 . $MEOUPATH/bin/helpers.sh
-. $MEOUPATH/bin/dev.sh
-. $MEOUPATH/bin/multimedia.sh
 
 # function main()
 main(){
