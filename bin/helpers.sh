@@ -69,7 +69,7 @@ show_version(){
 	show_line
 	cd $MEOUPATH && git fetch -vp 2&> /dev/null
 	echo "Version: "
-	git tag | egrep v. | tail -1
+	git tag -l --sort=v:refname | egrep v. | tail -1
 	show_line
 	cd - 2&> /dev/null
 	echo
