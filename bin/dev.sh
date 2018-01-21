@@ -152,8 +152,8 @@ install_composer(){
 	show_line
 }
 
-# function install_oh-my-zsh()
-install_oh-my-zsh(){
+# function install_ohmyzsh()
+install_ohmyzsh(){
 	show_line
 	if [[ -e /usr/bin/zsh && -e ~/.oh-my-zsh/oh-my-zsh.sh ]]; then
 		echo "Oh-My-Zsh is already installed!"

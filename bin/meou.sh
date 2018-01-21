@@ -51,7 +51,7 @@ main(){
 			case_option 'software' $_option
 			;;
 		# Oh My Zsh (Framework Zsh)
-		oh-my-zsh)
+		ohmyzsh)
 			case_option 'software' $_option
 			;;
 		# default case
