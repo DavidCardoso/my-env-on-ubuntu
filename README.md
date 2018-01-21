@@ -40,3 +40,4 @@ to install some softwares on Ubuntu Linux Enviroment via CLI.
 	- android-studio: Android Studio IDE
 	- composer: PHP package manager
 	- vlc: Media Player with some standards codecs 
+	- ohmyzsh: Oh My Zsh (Framework Zshell)
