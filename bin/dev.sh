@@ -165,7 +165,7 @@ install_ohmyzsh(){
 	echo "Based on: https://github.com/robbyrussell/oh-my-zsh/blob/master/README.md"
 	echo
 
-	if [[ -n /usr/bin/zsh ]]; then
+	if [[ ! -e /usr/bin/zsh ]]; then
 		echo "Zsh is required. Do you want install it? (Y/n)"
 		read choice;
 		choice=$(first_letter_lower $choice)
