@@ -30,7 +30,7 @@ Softwares installation and Configs for Ubuntu Linux Enviroment.
 
 # Installing
 - $ mkdir -p $HOME/dev/shell/ && cd $_ 
- - or just navigate to your desired folder
+	- or just navigate to your desired folder
 - $ git clone https://github.com/KalahariDavid/my-env-on-ubuntu
 - $ cd my-env-on-ubuntu
 - $ source install.sh
