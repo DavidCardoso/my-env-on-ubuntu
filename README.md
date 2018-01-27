@@ -24,7 +24,8 @@ Softwares installation and Configs for Ubuntu Linux Enviroment.
 			        █▒███▒██████  
 
 # Description
-- **My Env on Ubuntu** is a _Command Line Tool_ that makes easier to set up and to  install some softwares on Ubuntu Linux Enviroment via CLI. 
+- **My Env on Ubuntu** is a _Command Line Tool_ that makes easier to set up and to  install some softwares on Ubuntu Linux Enviroment via CLI.
+- Install, configure, refresh and remove things on your Ubuntu Linux enviroment.
 - It is very helpful after an operating system reinstall (or not :)
 
 # Installing
@@ -34,32 +35,27 @@ Softwares installation and Configs for Ubuntu Linux Enviroment.
 - $ cd my-env-on-ubuntu
 - $ source install.sh
 
-# Instructions of usage
+# Instructions
 ## Usage:
-	- meou [BLOCK]
-	- meou [BLOCK] [OPTION]
-	- meou [BLOCK] [OPTION] [TAG]
+- meou [BLOCK]
+- meou [BLOCK] [OPTION]
+- meou [BLOCK] [OPTION] [TAG]
 
-	- Example:
-		- ```meou sublime --install```
-
-## Install, configure, refresh and remove things on your Ubuntu Linux enviroment.
-
-## 'My Env on Ubuntu' is a Command Line Tool that makes easier to set up and to install some softwares on Ubuntu Linux Enviroment via CLI.
-## It is very helpful after an operating system reinstall (or not :)
+- Example:
+	- ```meou sublime --install```
 
 ## Help:
-	- **--help** 		Show this help message
+- **--help** 		Show this help message
 
 ## Application Options:
-	- **--version**	Print the version and exit
-	- **--install** 	Install the software related to the [BLOCK] chosen 
+- **--version**	Print the version and exit
+- **--install** 	Install the software related to the [BLOCK] chosen 
 
 ## Available Block of commands:
-	- **sublime**: Sublime Text IDE
-	- **docker**: Docker Community Edition (apps via containers)
-	- **docker-compose**: Docker Compose (CLI for Docker) 
-	- **android-studio**: Android Studio IDE
-	- **composer**: PHP package manager
-	- **vlc**: Media Player with some standards codecs 
-	- **ohmyzsh**: Oh My Zsh (Framework Zshell)
+- **sublime**: Sublime Text IDE
+- **docker**: Docker Community Edition (apps via containers)
+- **docker-compose**: Docker Compose (CLI for Docker) 
+- **android-studio**: Android Studio IDE
+- **composer**: PHP package manager
+- **vlc**: Media Player with some standards codecs 
+- **ohmyzsh**: Oh My Zsh (Framework Zshell)
