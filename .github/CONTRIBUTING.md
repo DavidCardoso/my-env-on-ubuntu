@@ -20,3 +20,4 @@
 - Refactor `./bin/main.sh` to add a new item into case statement.
 - Refactor `./bin/<related>.sh` script or create a new one following the pattern used on the others features.
 - Update `./README.md` with the new features' stuffs like [BLOCK], [OPTION] and [TAG] that should be passed through command line.
+- Update `./txt/help.txt` likewise _README.md_.
