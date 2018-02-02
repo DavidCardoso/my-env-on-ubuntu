@@ -18,6 +18,7 @@ _tag=$3 # tag to modify some behavior of the execution
 . $MEOUPATH/bin/helpers.sh
 . $MEOUPATH/bin/dev.sh
 . $MEOUPATH/bin/multimedia.sh
+. $MEOUPATH/bin/others.sh
 
 # function main()
 main(){
@@ -52,6 +53,10 @@ main(){
 			;;
 		# Oh My Zsh (Framework Zsh)
 		ohmyzsh)
+			case_option 'software' $_option
+			;;
+		# VirtualBox (Virtual Machines)
+		virtualbox)
 			case_option 'software' $_option
 			;;
 		# default case
