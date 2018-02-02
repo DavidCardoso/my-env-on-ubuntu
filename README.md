@@ -42,7 +42,7 @@ Softwares installation and Configs for Ubuntu Linux Enviroment.
 - meou [BLOCK] [OPTION] [TAG]
 
 - Example:
-	- ```meou sublime --install```
+	- `meou sublime --install`
 
 ## Help:
 - **--help** 		Show this help message
@@ -59,3 +59,4 @@ Softwares installation and Configs for Ubuntu Linux Enviroment.
 - **composer**: 	PHP package manager
 - **vlc**: 			Media Player with some standards codecs 
 - **ohmyzsh**: 		Oh My Zsh (Framework Zshell)
+- **virtualbox**: 		VirtualBox (Virtual Machines)
