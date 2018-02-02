@@ -8,14 +8,10 @@
 ## @copyright  GNU GPL-3.0
 ## @sa         https://github.com/KalahariDavid/my-env-on-ubuntu/
 
-# function install_vlc()
+# function install_virtualbox()
 install_virtualbox(){
     show_line
-<<<<<<< HEAD
     if [[ -e /usr/bin/virtualbox ]]; then
-=======
-    if [[ -e /usr/bin/vlc ]]; then
->>>>>>> 03ac89dcffc37eb250bf955439202d522b518f9a
         echo "VirtualBox is already installed!"
         exit 0
     fi
@@ -23,10 +19,7 @@ install_virtualbox(){
     echo "Installing VirtualBox..."
     echo "Based on: http://www.edivaldobrito.com.br/virtualbox-no-linux/"
     echo "Tested on: Ubuntu 17.10 (artful)"
-<<<<<<< HEAD
     echo
-=======
->>>>>>> 03ac89dcffc37eb250bf955439202d522b518f9a
 
     sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" >> /etc/apt/sources.list.d/virtualbox.list'
     wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
