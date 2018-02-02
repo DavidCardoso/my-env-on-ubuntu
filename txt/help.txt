@@ -26,3 +26,4 @@ Available Block of commands:
 	android-studio 	Android Studio IDE
 	composer 	PHP package manager
 	vlc 		Media Player with some standards codecs 
+	virtualbox 		VirtualBox (Virtual Machines)
