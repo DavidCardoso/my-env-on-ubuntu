@@ -11,7 +11,7 @@
 # function install_vlc()
 install_virtualbox(){
     show_line
-    if [[ -e /usr/bin/vlc ]]; then
+    if [[ -e /usr/bin/virtualbox ]]; then
         echo "VirtualBox is already installed!"
         exit 0
     fi
@@ -19,6 +19,7 @@ install_virtualbox(){
     echo "Installing VirtualBox..."
     echo "Based on: http://www.edivaldobrito.com.br/virtualbox-no-linux/"
     echo "Tested on: Ubuntu 17.10 (artful)"
+    echo
 
     sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" >> /etc/apt/sources.list.d/virtualbox.list'
     wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
