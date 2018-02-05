@@ -54,9 +54,10 @@ Softwares installation and Configs for Ubuntu Linux Enviroment.
 ## Available Block of commands:
 - **sublime**: 		Sublime Text IDE
 - **docker**: 		Docker Community Edition (apps via containers)
-- **docker-compose**: Docker Compose (CLI for Docker) 
+- **docker-compose**: CLI for Docker
 - **android-studio**: Android Studio IDE
 - **composer**: 	PHP package manager
 - **vlc**: 			Media Player with some standards codecs 
 - **ohmyzsh**: 		Oh My Zsh (Framework Zshell)
-- **virtualbox**: 		VirtualBox (Virtual Machines)
+- **virtualbox**: 		Virtual Machines
+- **pgadmin**: 		Postgres GUI

@@ -204,3 +204,27 @@ install_ohmyzsh(){
 	echo "...End of Oh-My-Zsh installation."
 	show_line
 }
+
+# function install_pgadmin()
+install_pgadmin(){
+	show_line
+	if [[ -e /usr/bin/pgadmin ]]; then
+		echo "PGAdmin is already installed!"
+		exit 0
+	fi
+
+	show_line
+	echo "Installing PGAdmin..."
+	echo "Based on: https://wiki.postgresql.org/wiki/Apt"
+	echo
+
+	sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+	sudo apt update
+	sudo apt install wget ca-certificates
+	wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+	sudo apt install pgadmin4
+
+	echo
+	echo "...End of PGAdmin installation."
+	show_line
+}
