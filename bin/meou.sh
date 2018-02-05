@@ -59,6 +59,10 @@ main(){
 		virtualbox)
 			case_option 'software' $_option
 			;;
+		# PGAdmin (Postgres GUI)
+		pgadmin)
+			case_option 'software' $_option
+			;;
 		# default case
 		*)
 			case $_argc in
