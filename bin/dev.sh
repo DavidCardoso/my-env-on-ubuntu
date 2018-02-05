@@ -222,7 +222,7 @@ install_pgadmin(){
 	sudo apt update
 	sudo apt install wget ca-certificates
 	wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-	sudo apt install pgadmin4
+	sudo apt install pgadmin3
 
 	echo
 	echo "...End of PGAdmin installation."
