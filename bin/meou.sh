@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## @file meou.sh
+## @file 	   meou.sh
 ## @brief      Softwares installation and Configs for Ubuntu Linux Enviroment via CLI
 ## @author     David Cardoso
 ## @since      January 8th, 2018
@@ -80,10 +80,10 @@ main(){
 					;;
 				*)
 					echo 'Please, inform until three arguments:'
-					echo '0: meou'
-					echo '1: meou [BLOCK]'
-					echo '2: meou [BLOCK] [OPTION]'
-					echo '3: meou [BLOCK] [OPTION] [TAG]'
+					echo 'e.g. 0 => meou'
+					echo 'e.g. 1 => meou [BLOCK]'
+					echo 'e.g. 2 => meou [BLOCK] [OPTION]'
+					echo 'e.g. 3 => meou [BLOCK] [OPTION] [TAG]'
 					;;
 			esac
 			echo
