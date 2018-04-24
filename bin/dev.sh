@@ -165,8 +165,6 @@ install_ohmyzsh(){
 			sudo chsh -s $(which zsh)
 			zsh --version
 		fi
-	else
-		exit 0;
 	fi
 
 	if [[ -e /usr/bin/curl ]]; then
