@@ -63,6 +63,10 @@ main(){
 		pgadmin)
 			case_option 'software' $_option
 			;;
+		# Guake Terminal
+		guake)
+			case_option 'software' $_option
+			;;
 		# default case
 		*)
 			case $_argc in

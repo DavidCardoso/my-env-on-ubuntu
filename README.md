@@ -61,3 +61,4 @@ Softwares installation and Configs for Ubuntu Linux Enviroment.
 - **ohmyzsh**: 		Oh My Zsh (Framework Zshell)
 - **virtualbox**: 		Virtual Machines
 - **pgadmin**: 		Postgres GUI
+- **guake**: 		Guake Terminal

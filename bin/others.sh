@@ -32,3 +32,24 @@ install_virtualbox(){
     echo "...End of VirtualBox Installation."
     show_line
 }
+
+# function install_guake()
+install_guake(){
+    show_line
+    if [[ -e /usr/bin/guake ]]; then
+        echo "Guake is already installed!"
+        exit 0
+    fi
+
+    echo "Installing Guake..."
+    echo "Based on: http://guake.readthedocs.io/en/stable/user/installing.html#system-wide-installation"
+    echo "Tested on: Ubuntu 17.10 (artful)"
+    echo
+
+    sudo apt update
+    sudo apt install guake
+
+    echo
+    echo "...End of Guake Installation."
+    show_line
+}
