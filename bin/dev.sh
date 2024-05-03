@@ -66,28 +66,6 @@ install_docker(){
 	show_line
 }
 
-# function install_docker-compose()
-install_docker-compose(){
-	show_line
-	if [[ -e /usr/local/bin/docker-compose ]];  then
-		echo "Docker Compose is already installed!"
-		exit 0
-	fi
-
-	show_line
-	echo "Installing Docker Compose..."
-	echo "Based on: https://docs.docker.com/compose/install/#install-compose"
-	echo
-
-	sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-	sudo chmod +x /usr/local/bin/docker-compose
-	docker-compose --version
-
-	echo
-	echo "...End of Docker Compose installation."
-	show_line
-}
-
 # function install_android-studio()
 install_android-studio(){
 	show_line
