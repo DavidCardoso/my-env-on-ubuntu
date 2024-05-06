@@ -1,5 +1,6 @@
 # My Env on Ubuntu CLI
-Softwares installation and Configs for Ubuntu Linux Enviroment.
+
+This project helps with installation and configs for tools on Ubuntu Linux Environment.
 
 			     ██          ██
 			     █▒█        █▒█
@@ -23,42 +24,49 @@ Softwares installation and Configs for Ubuntu Linux Enviroment.
 			       █▒████▒▒▒▒████
 			        █▒███▒██████
 
-# Description
-- **My Env on Ubuntu** is a _Command Line Tool_ that makes easier to set up and to  install some softwares on Ubuntu Linux Enviroment via CLI.
+## Description
+- **My Env on Ubuntu** is a _Command Line Tool_ that makes easier to set up and install some softwares on Ubuntu Linux Enviroment.
 - Install, configure, refresh and remove things on your Ubuntu Linux enviroment.
 - It is very helpful after an operating system reinstall (or not :)
 
 # Installing
-- $ mkdir -p $HOME/dev/shell/ && cd $_
-	- or just navigate to your desired folder
-- $ git clone https://github.com/KalahariDavid/my-env-on-ubuntu
-- $ cd my-env-on-ubuntu
-- $ source install.sh
 
-# Instructions
+```shell
+# create/navigate to your desired folder
+mkdir -p $HOME/dev/shell/ && cd $_
+git clone https://github.com/DavidCardoso/my-env-on-ubuntu
+cd my-env-on-ubuntu
+source install.sh
+```
+
 ## Usage:
-- meou [BLOCK]
-- meou [BLOCK] [OPTION]
-- meou [BLOCK] [OPTION] [TAG]
 
-- Example:
-	- `meou sublime --install`
+```shell
+meou [BLOCK]
+meou [BLOCK] [OPTION]
+meou [BLOCK] [OPTION] [TAG]
 
-## Help:
-- **--help** 		Show this help message
+# Example
+meou sublime --install
+```
 
-## Application Options:
-- **--version** 	Print the version and exit
-- **--install** 	Install the software related to the [BLOCK] chosen
+
+## Options:
+- `--help` 		Show this help message
+- `--version` 	Print the version
+- `--install` 	Install the software related to the [BLOCK] chosen
+
+> The `--install` option is the default one and optional. Therefore `meou sublime` will have the same behavior.
 
 ## Available Block of commands:
-- **sublime**: 		Sublime Text IDE
-- **docker**: 		Docker Community Edition (apps via containers)
-- **android-studio**: Android Studio IDE
-- **composer**: 	PHP package manager
-- **vlc**: 			Media Player with some standards codecs
-- **ohmyzsh**: 		Oh My Zsh (Framework Zshell)
-- **virtualbox**: 		Virtual Machines
-- **pgadmin**: 		Postgres GUI
-- **guake**: 		Guake Terminal
-- **code**: 		Visual Studio Code
+- `sublime`: 		Sublime Text IDE - https://www.sublimetext.com
+- `docker`: 		Docker Community Edition - https://www.docker.com
+- `android-studio`: Android Studio IDE - https://developer.android.com/studio
+- `composer`: 	    PHP package manager - https://getcomposer.org
+- `vlc`: 			Media Player with some standard codecs - https://www.videolan.org/vlc
+- `ohmyzsh`: 		Oh My Zsh (zshell framework) - https://ohmyz.sh
+- `virtualbox`: 	Virtual Machines - https://www.virtualbox.org
+- `pgadmin`: 		Postgres GUI - https://www.pgadmin.org
+- `guake`: 		    Guake Terminal - https://guake.github.io
+- `code`: 		    Visual Studio Code - https://code.visualstudio.com
+- `1password`: 	    Password manager - https://1password.com
