@@ -21,7 +21,7 @@ Softwares installation and Configs for Ubuntu Linux Enviroment.
 			         █▒██▒██████▒█
 			         █▒███▒▒▒█████
 			       █▒████▒▒▒▒████
-			        █▒███▒██████  
+			        █▒███▒██████
 
 # Description
 - **My Env on Ubuntu** is a _Command Line Tool_ that makes easier to set up and to  install some softwares on Ubuntu Linux Enviroment via CLI.
@@ -29,7 +29,7 @@ Softwares installation and Configs for Ubuntu Linux Enviroment.
 - It is very helpful after an operating system reinstall (or not :)
 
 # Installing
-- $ mkdir -p $HOME/dev/shell/ && cd $_ 
+- $ mkdir -p $HOME/dev/shell/ && cd $_
 	- or just navigate to your desired folder
 - $ git clone https://github.com/KalahariDavid/my-env-on-ubuntu
 - $ cd my-env-on-ubuntu
@@ -49,15 +49,16 @@ Softwares installation and Configs for Ubuntu Linux Enviroment.
 
 ## Application Options:
 - **--version** 	Print the version and exit
-- **--install** 	Install the software related to the [BLOCK] chosen 
+- **--install** 	Install the software related to the [BLOCK] chosen
 
 ## Available Block of commands:
 - **sublime**: 		Sublime Text IDE
 - **docker**: 		Docker Community Edition (apps via containers)
 - **android-studio**: Android Studio IDE
 - **composer**: 	PHP package manager
-- **vlc**: 			Media Player with some standards codecs 
+- **vlc**: 			Media Player with some standards codecs
 - **ohmyzsh**: 		Oh My Zsh (Framework Zshell)
 - **virtualbox**: 		Virtual Machines
 - **pgadmin**: 		Postgres GUI
 - **guake**: 		Guake Terminal
+- **code**: 		Visual Studio Code
