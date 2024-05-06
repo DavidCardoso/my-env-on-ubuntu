@@ -8,7 +8,7 @@ Example:
 
 Install, configure, refresh and remove things on your Ubuntu Linux enviroment.
 
-'My Env on Ubuntu' is a Command Line Tool that makes easier to set up and 
+'My Env on Ubuntu' is a Command Line Tool that makes easier to set up and
 to install some softwares on Ubuntu Linux Enviroment via CLI.
 It is very helpful after an operating system reinstall (or not :)
 
@@ -17,15 +17,16 @@ Help:
 
 Application Options:
 	--version	Print the version and exit
-	--install 	Install the software related to the [BLOCK] chosen 
+	--install 	Install the software related to the [BLOCK] chosen
 
 Available Block of commands:
 	sublime 	Sublime Text IDE
 	docker 		Docker Community Edition (apps via containers)
 	android-studio 	Android Studio IDE
 	composer 	PHP package manager
-	vlc 		Media Player with some standards codecs 
+	vlc 		Media Player with some standards codecs
 	ohmyzsh		Zshell Framework
 	virtualbox 		Virtual Machines
 	pgadmin 		Postgres GUI
 	guake 		Guake Terminal
+	code 		Visual Studio Code

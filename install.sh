@@ -5,11 +5,11 @@
 ## @author     David Cardoso
 ## @since      January 8th, 2018
 ## @copyright  GNU GPL-3.0
-## @sa         https://github.com/KalahariDavid/my-env-on-ubuntu/
+## @sa         https://github.com/DavidCardoso/my-env-on-ubuntu/
 
 # COMMAND LINE ARGUMENTS
 _script=$0 # name of this script
-_arg1=$1 # first argument
+_arg1=$1   # first argument
 _pwd=$(pwd)
 _user=$(whoami)
 
@@ -26,11 +26,11 @@ show_header "install.sh"
 show_line
 echo "$_prefix Creating symbolic link 'meou' on /usr/local/bin/ path..."
 if [[ $_user != "root" ]]; then
-	sudo rm /usr/local/bin/meou
-	sudo ln -s $_pwd/bin/meou.sh /usr/local/bin/meou
+    sudo rm /usr/local/bin/meou
+    sudo ln -s $_pwd/bin/meou.sh /usr/local/bin/meou
 else
-	rm /usr/local/bin/meou
-	ln -s $_pwd/bin/meou.sh /usr/local/bin/meou
+    rm /usr/local/bin/meou
+    ln -s $_pwd/bin/meou.sh /usr/local/bin/meou
 fi
 
 # adding execution permission to the scripts in bin path
@@ -46,9 +46,9 @@ echo "
 # $_msg
 if [[ \$(whoami) == $_user ]]; then
 	export MEOUPATH=$_pwd
-fi" >> ./txt/configs.txt
+fi" >>./txt/configs.txt
 for _profiles in ~/.*rc; do
-	cat ./txt/configs.txt >> $_profiles
+    cat ./txt/configs.txt >>$_profiles
 done
 export MEOUPATH=$_pwd
 rm -f ./txt/configs.txt
